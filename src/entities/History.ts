@@ -12,7 +12,7 @@ export class History {
     @Column()
     description: string
 
-    @ManyToOne(() => Project, (project) => project.histories)
+    @ManyToOne(() => Project, (project) => project.histories, { onDelete: 'CASCADE' })
     project: Project
 
     @OneToMany(() => Task, (task) => task.history)

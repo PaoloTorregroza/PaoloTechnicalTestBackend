@@ -12,7 +12,7 @@ export class Project {
     @Column()
     name: string
 
-    @ManyToOne(() => Company, (company) => company.projects)
+    @ManyToOne(() => Company, (company) => company.projects, { onDelete: 'CASCADE' })
     company: Company
 
     @OneToMany(() => History, (history) => history.project)

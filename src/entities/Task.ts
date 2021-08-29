@@ -18,10 +18,10 @@ export class Task {
     @PrimaryGeneratedColumn()
     id: number
 
-    @ManyToOne(() => User, (user) => user.tasks)
+    @ManyToOne(() => User, (user) => user.tasks, { onDelete: 'CASCADE' })
     user: User
 
-    @ManyToOne(() => History, (history) => history.tasks)
+    @ManyToOne(() => History, (history) => history.tasks, { onDelete: 'CASCADE' })
     history: History
 
     @OneToMany(() => Comment, (comment) => comment.task)

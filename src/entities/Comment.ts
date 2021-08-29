@@ -12,7 +12,7 @@ export class Comment {
     @Column()
     content: string
 
-    @ManyToOne(() => User, (user) => user.comments)
+    @ManyToOne(() => User, (user) => user.comments, { onDelete: 'CASCADE' })
     user: User
 
     @ManyToOne(() => Task, (task) => task.comments)
