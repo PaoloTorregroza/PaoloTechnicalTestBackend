@@ -21,7 +21,7 @@ createConnection({
   port: 5432,
   username: process.env.DB_USER || 'test',
   password: process.env.DB_PASSWORD || 'development',
-  database: 'fusepong',
+  database: process.env.DB_NAME || 'fusepong',
 })
   .then(() => {
     app.listen(process.env.PORT || port, () => console.log(`App running on port ${port}. . .`))
