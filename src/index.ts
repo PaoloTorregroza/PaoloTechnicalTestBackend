@@ -24,16 +24,16 @@ const getOptions = () => {
     synchronize: true,
     logging: false,
     ssl: true,
-    // extra: {
-    //   ssl: true,
-    //   ca: process.env.SSL_CERT,
-    // },
+    extra: {
+      ssl: {
+        rejectUnauthorized: false,
+      },
+    },
     entities: [
       'dist/entities/*.js',
     ],
   }
   if (process.env.DATABASE_URL) {
-    console.log(process.env.DATABASE_URL)
     Object.assign(connectionOptions, { url: process.env.DATABASE_URL })
   } else {
     // gets your default configuration
