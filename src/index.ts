@@ -14,7 +14,15 @@ app.use(cors())
 app.use(express.json())
 app.use('/api/', routes)
 
-createConnection()
+createConnection({
+  name: 'default',
+  type: 'postgres',
+  host: process.env.DB_HOST || 'localhost',
+  port: 5432,
+  username: process.env.DB_USER || 'test',
+  password: process.env.DB_PASSWORD || 'development',
+  database: 'fusepong',
+})
   .then(() => {
     app.listen(process.env.PORT || port, () => console.log(`App running on port ${port}. . .`))
   })
