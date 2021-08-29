@@ -23,9 +23,11 @@ const getOptions = () => {
     type: 'postgres',
     synchronize: true,
     logging: false,
-    extra: {
-      ssl: true,
-    },
+    ssl: true,
+    // extra: {
+    //   ssl: true,
+    //   ca: process.env.SSL_CERT,
+    // },
     entities: [
       'dist/entities/*.js',
     ],
