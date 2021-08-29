@@ -47,7 +47,7 @@ const getOptions = () => {
 const ormConfig = getOptions()
 createConnection(ormConfig)
   .then(() => {
-    app.listen(process.env.PORT || port, () => console.log(`App running on port ${port}. . .`))
+    app.listen(process.env.PORT || port, () => console.log(`App running on port ${process.env.PORT || port}. . .`))
   })
   .catch((err) => {
     console.log('Unable to connect to db', err)
