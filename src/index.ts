@@ -31,6 +31,7 @@ const getOptions = () => {
     ],
   }
   if (process.env.DATABASE_URL) {
+    console.log(process.env.DATABASE_URL)
     Object.assign(connectionOptions, { url: process.env.DATABASE_URL })
   } else {
     // gets your default configuration
